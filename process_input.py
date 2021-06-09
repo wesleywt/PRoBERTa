@@ -11,19 +11,19 @@ def from_csv(positive_path, negative_path):
     return output_dataframe
 
 def tokenize(dataframe, model):
-    dfv = dataframe.values()
+    dfv = dataframe.values
     out = []
     for row in dfv:
         out.append([" ".join(model.encode_as_pieces(row[0])), " ".join(model.encode_as_pieces(row[1])),row[2]])
     print(out[101])
     out_df = pd.DataFrame(out, columns=dataframe.columns)
     print(out_df.head())
-    out_df.to_csv('H1N1_interact_tokenized.csv', index=False)
+    out_df.to_csv('Data/H1N1_interact_tokenized.csv', index=False)
 
 
 
 if __name__ == '__main__':
-    model_path = 'BPE_model'
+    model_path = 'BPE_model/m_reviewed.model'
     model = spm.SentencePieceProcessor()
     model.load(model_path)
     positive = 'Data/h1n1_data/training_set/H1N1_human_pos_training.csv'
