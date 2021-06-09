@@ -47,7 +47,7 @@ if [ "$RESUME" = "no" ]; then
         --max-positions $MAX_POSITIONS --max-sentences $MAX_SENTENCES \
         --arch roberta_base --task sentence_prediction \
         --truncate-sequence --use-cls-token $USE_CLS \
-	--bpe sentencepiece \
+	      --bpe sentencepiece \
         --classification-head-name protein_interaction_prediction \
         --restore-file "$ROBERTA_PATH" --reset-optimizer --reset-dataloader --reset-meters \
         --init-token 0 --separator-token 2 \
