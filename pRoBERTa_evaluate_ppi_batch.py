@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import torch
 
+print(len(sys.argv))
 if len(sys.argv) != 7:
     print(sys.argv[0] + " data_path binarized_data_path output_path model_folder classification_head batch_size")
     sys.exit()

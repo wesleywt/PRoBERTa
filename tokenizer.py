@@ -60,6 +60,9 @@ def tokenize_interact_data(model):
 	out_df = pd.DataFrame(out, columns=df.columns)
 	out_df.to_csv('Finetune_interact_tokenized.csv',index=False)
 
+
+
+
 if __name__ == "__main__":
 	filter_seqs()
 	spm.SentencePieceTrainer.Train('--input=pretraining_data.txt --model_prefix=m_reviewed --vocab_size=10000 --character_coverage=1.0 --model_type=bpe --max_sentence_length=1024')
