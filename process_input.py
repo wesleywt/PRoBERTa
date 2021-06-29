@@ -26,8 +26,8 @@ if __name__ == '__main__':
     model_path = 'BPE_model/m_reviewed.model'
     model = spm.SentencePieceProcessor()
     model.load(model_path)
-    positive = 'Data/h1n1_data/training_set/H1N1_human_pos_training.csv'
-    negative = 'Data/h1n1_data/training_set/H1N1_human_neg_training.csv'
+    positive = 'Data/h1n1_data/validation_set/H1N1_human_test_positive.csv'
+    negative = 'Data/h1n1_data/validation_set/H1N1_human_test_negative.csv'
 
     df = from_csv(positive, negative)
 
